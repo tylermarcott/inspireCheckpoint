@@ -17,7 +17,12 @@ export class Todo {
   get todoTemplate() {
     return `
   
-  // TODO: need to create this template in html next.
+      <div class="row">
+      <div>
+        completed? ${this.completed}
+      </div>
+      descrip: ${this.description}
+    </div>
 
   
   `

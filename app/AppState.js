@@ -24,7 +24,7 @@ class ObservableAppState extends EventEmitter {
   // @ts-ignore
   activeTodo = null
 
-
+  /** @type {Todo[]} */
   todosList = []
 
 

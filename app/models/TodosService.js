@@ -48,9 +48,11 @@ class TodosService {
 
     let newTodo = new Todo(res.data)
 
-    //TODO: ok so now I have my new class instance of my posted data. Now I just need to draw it to the page each time a new one is created.
+    AppState.todosList.push(newTodo)
 
-    // TODO: ok so I'm able to do a push on the todo. Now I just need to make another function that gets the todos so I can draw them.
+    AppState.emit('todosList')
+
+    // NOTE: this data set is being pushed to the api, we can confirm this with the draw!
 
 
   }
