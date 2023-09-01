@@ -44,6 +44,14 @@ class TodosService {
 
     console.log('this is out active todo:', AppState.activeTodo);
 
+    let res = await api.post('api/todos', AppState.activeTodo)
+
+    let newTodo = new Todo(res.data)
+
+    //TODO: ok so now I have my new class instance of my posted data. Now I just need to draw it to the page each time a new one is created.
+
+    // TODO: ok so I'm able to do a push on the todo. Now I just need to make another function that gets the todos so I can draw them.
+
 
   }
 
@@ -60,7 +68,6 @@ class TodosService {
 
     //TODO: finish this once you have your form and post done.
 
-    console.log('here is a list of our todos: ', res.data);
   }
 
 }
