@@ -28,9 +28,29 @@ I think maybe what I want to start with is creating a form to create a new todo.
 
 */
 
+import { AppState } from "../AppState.js";
 import { api } from "../services/AxiosService.js"
+import { Todo } from "./Todo.js";
 
 class TodosService {
+
+
+  async createTodo(formData) {
+    console.log('passed form data:', formData)
+
+    // TODO: ok so I think what I can do to make this work is to add a createdTodos array in the appstate to save all of my todos in. I can do that here in my create. Then, I can copy the data from my form to a new instance of this class. I can then use that appstate array in order to post the to the sandbox my new todos that I create.
+
+    AppState.activeTodo = new Todo(formData)
+
+    console.log('this is out active todo:', AppState.activeTodo);
+
+
+  }
+
+
+
+
+
   async getTodos() {
     let res = await api.get('api/todos')
 

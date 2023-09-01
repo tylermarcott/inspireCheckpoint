@@ -1,3 +1,4 @@
+import { Todo } from "./models/Todo.js"
 import { Value } from './models/Value.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { isValidProp } from './utils/IsValidProp.js'
@@ -19,7 +20,12 @@ class ObservableAppState extends EventEmitter {
   /** @type {Weather|null} */
   weather = null
 
+  /** @type {Todo} */
+  // @ts-ignore
+  activeTodo = null
 
+
+  todosList = []
 
 
 

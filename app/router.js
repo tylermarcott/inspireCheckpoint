@@ -23,20 +23,22 @@ export const router = [
     <div class="offcanvas offcanvas-start clear-card text-light" tabindex="-1" id="todoOffCanvas" aria-labelledby="Todo">
       <div class="offcanvas-header">
         <h5 class="offcanvas-title" id="offcanvasLabel">Add a new todo to your list:</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button class="text-light" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
 
-      
+
+
+      <form class="offcanvas-body" onsubmit="app.TodosController.createTodo()">
         <div class="mb-3">
-          <label for="description" class="form-label">Description</label>
-          <input type="description" class="description" id="description" placeholder="description">
+          <label for="description" class="form-label"></label>
+          <input name="description" type="text" class="description" id="description" placeholder="Add Todo">
+          <button type="submit" class="mdi mdi-plus-box"></button>
         </div>
       
         <div class="mb-3">
           have list of todos here with checkmarks
         </div>
-      </div>
+      </form>
     </div>
 
 
