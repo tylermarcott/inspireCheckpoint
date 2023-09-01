@@ -18,13 +18,14 @@ function _drawTodos() {
   setHTML('todoList', content)
 }
 
+// TODO: stopping off here. Next, I need to do a little formatting on my todos. Add a few more todos, then work on deleting them? Or maybe the checks.
 
 
 
 export class TodosController {
   constructor() {
     AppState.on('account', this.getTodos)
-    AppState.on('todosList', _drawTodos)  //FIXME: we aren't getting a change in our todo list for some reason, so it's never drawing.
+    AppState.on('todosList', _drawTodos)
   }
 
   async getTodos() {

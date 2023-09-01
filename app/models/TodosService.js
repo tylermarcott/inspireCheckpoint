@@ -44,6 +44,8 @@ class TodosService {
 
     console.log('this is out active todo:', AppState.activeTodo);
 
+    // NOTE: NOTE: so the difference between post and push: the reason we post is to send our data to the api. We then also have to push that same data, which will update it on our LOCAL SYSTEM. Post = to API, push = to LOCAL SYSTEM
+
     let res = await api.post('api/todos', AppState.activeTodo)
 
     let newTodo = new Todo(res.data)
