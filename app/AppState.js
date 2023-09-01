@@ -15,6 +15,9 @@ class ObservableAppState extends EventEmitter {
   /** @type {Quote|null} */
   randomQuote = null
 
+  /** @type {Weather|null} */
+  weather = null
+
 
 
 

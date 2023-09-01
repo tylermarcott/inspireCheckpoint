@@ -3,6 +3,7 @@ import { HomeController } from "./controllers/HomeController.js";
 import { ImagesController } from "./controllers/ImagesController.js";
 import { QuoteController } from "./controllers/QuoteController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
+import { WeatherController } from "./controllers/WeatherController.js";
 import { AboutView } from "./views/AboutView.js";
 
 /**
@@ -12,10 +13,18 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: [ImagesController, QuoteController],
+    controller: [ImagesController, QuoteController, WeatherController],
     view: /*html*/`
 
+
+    <div class="card text-dark">weather goes here
+    <h3 id="city"></h3>
+      <p id="temperature"></p> deg F
+    </div>
+
     <h2 class="text-light" id="quote">Test Text</h2>
+
+    
 
 
     `

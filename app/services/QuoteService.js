@@ -7,7 +7,7 @@ class QuoteService {
   async getQuote() {
     let res = await api.get('api/quotes')
 
-    console.log(res.data)
+    // console.log(res.data)
 
     AppState.randomQuote = res.data
   }
