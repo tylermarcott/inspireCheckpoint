@@ -9,7 +9,6 @@ function _drawWeather() {
   let city = AppState.weather.name
 
   let toFahrenheit = (weather.main.temp) * (9 / 5) - 459.67
-
   let fixedTemp = toFahrenheit.toFixed(0)
 
   setHTML('city', city)

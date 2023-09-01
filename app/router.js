@@ -17,12 +17,24 @@ export const router = [
     view: /*html*/`
 
 
-    <div class="card text-dark">weather goes here
-    <h3 id="city"></h3>
-      <p id="temperature"></p> deg F
-    </div>
+    <section class="container-fluid">
 
-    <h2 class="text-light" id="quote">Test Text</h2>
+      <div class="col-3">
+        <div class="card text-dark">
+          <div class="row">
+            <div class="col-6">
+              <h3 id="city"></h3>
+            </div>
+            <div class="col-6">
+              <p id="temperature"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-light" id="quote"></h2>
+
+    </section>
 
     
 

@@ -15,6 +15,7 @@ import { setHTML } from "../utils/Writer.js";
 export class ImagesController {
   _drawImage() {
     // @ts-ignore
+    // NOTE: ok so on here, this is just targeting style in the body and changing the background image to the following url. So to change styling on this, I can just change the styling on the body itself in CSS. I went in and did image fit and things work great now.
     document.body.style.backgroundImage = `url(${AppState.randomImage.largeImgUrl})`
   }
   constructor() {
