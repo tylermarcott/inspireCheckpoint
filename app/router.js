@@ -18,6 +18,35 @@ export const router = [
     view: /*html*/`
 
 
+
+
+    <div class="offcanvas offcanvas-start clear-card text-light" tabindex="-1" id="todoOffCanvas" aria-labelledby="Todo">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasLabel">Add a new todo to your list:</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+
+      
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input type="description" class="description" id="description" placeholder="description">
+        </div>
+      
+        <div class="mb-3">
+          have list of todos here with checkmarks
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+
     <section class="container-fluid clear-card">
 
       <div class="col-3">
@@ -31,9 +60,15 @@ export const router = [
             </div>
           </div>
         </div>
+
+
+        
+
       </div>
 
       <h2 class="text-light" id="quote"></h2>
+
+      <button class="btn btn-success" data-bs-toggle="offcanvas" data-bs-target="#todoOffCanvas">Add a todo</button>
 
     </section>
 
