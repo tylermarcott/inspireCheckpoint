@@ -12,6 +12,7 @@ class ObservableAppState extends EventEmitter {
   /** @type {Image|null} */
   randomImage = null
 
+
   /** @type {Quote|null} */
   randomQuote = null
 

@@ -9,3 +9,8 @@ body {
   background-position: center;
   background-size: cover;
 }
+
+.clear-card {
+  background-color: #100c0cad;
+  padding: 1em;
+}

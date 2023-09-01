@@ -2,6 +2,7 @@ import { AboutController } from "./controllers/AboutController.js";
 import { HomeController } from "./controllers/HomeController.js";
 import { ImagesController } from "./controllers/ImagesController.js";
 import { QuoteController } from "./controllers/QuoteController.js";
+import { TodosController } from "./controllers/TodosController.js";
 import { ValuesController } from "./controllers/ValuesController.js";
 import { WeatherController } from "./controllers/WeatherController.js";
 import { AboutView } from "./views/AboutView.js";
@@ -13,11 +14,11 @@ import { AboutView } from "./views/AboutView.js";
 export const router = [
   {
     path: '',
-    controller: [ImagesController, QuoteController, WeatherController],
+    controller: [ImagesController, QuoteController, WeatherController, TodosController],
     view: /*html*/`
 
 
-    <section class="container-fluid">
+    <section class="container-fluid clear-card">
 
       <div class="col-3">
         <div class="card text-dark">
