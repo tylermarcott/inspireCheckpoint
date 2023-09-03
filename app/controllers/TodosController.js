@@ -61,7 +61,9 @@ export class TodosController {
   async deleteTodo(todoId) {
 
     try {
-      await todosService.deleteTodo(todoId)
+      if (await Pop.confirm("Are you sure you want to delete this todo?")) {
+        await todosService.deleteTodo(todoId)
+      }
     } catch (error) {
       Pop.error(error)
     }

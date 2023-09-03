@@ -67,16 +67,17 @@ class TodosService {
 
 
 
-  deleteTodo(todoId) {
+  async deleteTodo(todoId) {
 
-    console.log('todo id in service:', todoId)
+    console.log('deleting the todo with the following id:', todoId)
 
-    let foundTodo = AppState.todosList.find(id => id.id == todoId)
+    // NOTE: remember, when you do something like this below, you HAVE to string interpolate, or it's not going to work. It will throw a 400 error when trying to access the api because the endpoint will just be todoId not the actual id lol.
 
-    console.log('found id:', foundTodo)
+    const res = await api.delete(`api/todos/${todoId}`)
 
-    AppState.todosList.filter(todo => )
+    console.log('deleting the following todo:', res)
 
+    AppState.todosList = AppState.todosList.filter(todo => todo.id != todoId)
   }
 
 
