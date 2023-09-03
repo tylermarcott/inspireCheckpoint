@@ -21,7 +21,7 @@ export class Todo {
     <div class="row">
 
       <div class="col-2">
-        <div checked='${this.completed}'></div>
+        ${this.completedCheckbox}
       </div>
 
       <div class="col-6">
@@ -32,15 +32,19 @@ export class Todo {
         <i class="mdi mdi-delete-circle" onclick="app.TodosController.deleteTodo('${this.id}')"></i>
       </div>
     </div>
-
-
-  
   `
   }
 
 
+  // TODO: create the templates for this.
 
-
+  get completedCheckbox() {
+    if (this.completed) {
+      return `<input type="checkbox" checked onchange="app.TodosController.completeTodo('${this.id}')">`
+    } else {
+      return `<input type="checkbox" onchange="app.TodosController.completeTodo('${this.id}')">`
+    }
+  }
 
 
 

@@ -71,5 +71,15 @@ export class TodosController {
 
 
 
+  async completeTodo(todoId) {
+    try {
+      await todosService.completeTodo(todoId)
+    } catch (error) {
+      Pop.error(error)
+    }
+  }
+
+
+
 
 }

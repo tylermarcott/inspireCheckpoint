@@ -69,15 +69,33 @@ class TodosService {
 
   async deleteTodo(todoId) {
 
-    console.log('deleting the todo with the following id:', todoId)
-
     // NOTE: remember, when you do something like this below, you HAVE to string interpolate, or it's not going to work. It will throw a 400 error when trying to access the api because the endpoint will just be todoId not the actual id lol.
 
     const res = await api.delete(`api/todos/${todoId}`)
 
-    console.log('deleting the following todo:', res)
-
     AppState.todosList = AppState.todosList.filter(todo => todo.id != todoId)
+  }
+
+
+
+
+
+  async completeTodo(todoId) {
+    let foundTodo = AppState.todosList.find(todo => todo.id == todoId)
+
+    console.log('status before:', foundTodo)
+
+    // @ts-ignore
+    foundTodo.completed = !foundTodo.completed
+
+    console.log('status after:', foundTodo)
+
+    // NOTE: syntax in the put: it's find the todo with our passed id, then replacing the current object in the api with our new altered object. Also, you forgot the backticks AGAIN
+
+    let res = await api.put(`api/todos/${todoId}`, foundTodo)
+
+    AppState.emit('todoList')
+
   }
 
 
