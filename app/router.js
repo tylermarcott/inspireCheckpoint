@@ -72,6 +72,7 @@ export const router = [
       </div>
 
       <h2 class="text-light" id="quote"></h2>
+      <h4 class="text-light" id="author"></h4>
 
       <button class="btn btn-success" data-bs-toggle="offcanvas" data-bs-target="#todoOffCanvas">Add a todo</button>
 

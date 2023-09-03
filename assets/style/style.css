@@ -14,3 +14,12 @@ body {
   background-color: #100c0cad;
   padding: 1em;
 }
+
+#author {
+  visibility: hidden;
+  transition: ease 0.5s;
+}
+
+#quote:hover+#author {
+  visibility: visible;
+}

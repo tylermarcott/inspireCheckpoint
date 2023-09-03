@@ -12,11 +12,16 @@ export class QuoteController {
     setHTML('quote', AppState.randomQuote.content)
   }
 
+  _drawAuthor() {
+    setHTML('author', AppState.quoteAuthor.author)
+  }
+
 
 
   constructor() {
     this.getQuote()
     AppState.on('randomQuote', this._drawQuote)
+    AppState.on('quoteAuthor', this._drawAuthor)
   }
 
   async getQuote() {

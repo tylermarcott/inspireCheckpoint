@@ -11,6 +11,7 @@ export class Todo {
     this.completed = data.completed || false
     this.creatorId = data.creatorId || ''
     this.description = data.description
+    this.author = data.author || ''
   }
 
 
