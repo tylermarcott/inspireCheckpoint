@@ -16,12 +16,16 @@ function _drawTodos() {
 
   setHTML('todoList', content)
 
+
+
+  // FIXME: having issues getting the todo count to update as the checkboxes for completeTodo function are clicked and unclicked.
+
+
   let uncompletedTodos = Todo.todoCount()
 
   setHTML('uncompleted-count', uncompletedTodos)
 }
 
-// TODO: stopping off here. Next, I need to do a little formatting on my todos. Add a few more todos, then work on deleting them? Or maybe the checks.
 
 
 

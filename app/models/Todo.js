@@ -50,12 +50,12 @@ export class Todo {
 
 
 
-  // FIXME: got insertion onto page, but I am getting undefined instead of a number. I think I need like some sort of forEach, because this find is only giving me a single array that isn't completed, not an array of all of the uncompleted arrays.
+  // FIXME: got count to work, but it's not updating on click. What can be called that will make this update/ is linked to this...?
 
   static todoCount() {
-    let uncompletedTodos = AppState.todosList.find(todo => !todo.completed)
+    let uncompletedTodos = AppState.todosList.filter(todo => !todo.completed)
 
-    console.log('you have this many uncompleted todos:', uncompletedTodos)
+    console.log('you have this many uncompleted todos:', uncompletedTodos.length)
 
     // @ts-ignore
     return `<h5>Total todo count: ${uncompletedTodos.length}</h5>`
