@@ -3,11 +3,10 @@ import { todosService } from "../models/TodosService.js";
 import { Pop } from "../utils/Pop.js";
 import { getFormData } from "../utils/FormHandler.js"
 import { setHTML } from "../utils/Writer.js";
+import { Todo } from "../models/Todo.js";
 
 
 function _drawTodos() {
-
-  console.log('drawing todos');
 
   let content = ''
 
@@ -16,6 +15,10 @@ function _drawTodos() {
   todos.forEach(todo => content += todo.todoTemplate)
 
   setHTML('todoList', content)
+
+  let uncompletedTodos = Todo.todoCount()
+
+  setHTML('uncompleted-count', uncompletedTodos)
 }
 
 // TODO: stopping off here. Next, I need to do a little formatting on my todos. Add a few more todos, then work on deleting them? Or maybe the checks.

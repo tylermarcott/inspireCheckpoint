@@ -36,7 +36,7 @@ class TodosService {
 
 
   async createTodo(formData) {
-    console.log('passed form data:', formData)
+    // console.log('passed form data:', formData)
 
     AppState.activeTodo = new Todo(formData)
 
@@ -59,7 +59,7 @@ class TodosService {
 
     let mappedTodos = res.data.map(todo => new Todo(todo))
 
-    console.log('mapped todo list:', mappedTodos)
+    // console.log('mapped todo list:', mappedTodos)
 
     AppState.todosList = mappedTodos
   }
@@ -83,12 +83,12 @@ class TodosService {
   async completeTodo(todoId) {
     let foundTodo = AppState.todosList.find(todo => todo.id == todoId)
 
-    console.log('status before:', foundTodo)
+    // console.log('status before:', foundTodo)
 
     // @ts-ignore
     foundTodo.completed = !foundTodo.completed
 
-    console.log('status after:', foundTodo)
+    // console.log('status after:', foundTodo)
 
     // NOTE: syntax in the put: it's find the todo with our passed id, then replacing the current object in the api with our new altered object. Also, you forgot the backticks AGAIN
 

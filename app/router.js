@@ -1,3 +1,4 @@
+import { AppState } from "./AppState.js";
 import { AboutController } from "./controllers/AboutController.js";
 import { HomeController } from "./controllers/HomeController.js";
 import { ImagesController } from "./controllers/ImagesController.js";
@@ -22,6 +23,7 @@ export const router = [
 
     <div class="offcanvas offcanvas-start clear-card text-light" tabindex="-1" id="todoOffCanvas" aria-labelledby="Todo">
       <div class="offcanvas-header">
+        <div id="uncompleted-count"></div>
         <h5 class="offcanvas-title" id="offcanvasLabel">Add a new todo to your list:</h5>
         <button class="text-light" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
