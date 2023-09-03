@@ -29,7 +29,6 @@ export class TodosController {
   }
 
 
-  // FIXME: todos are not persisting through refresh. I can see the todos in the todo api, but they are not being loaded to the page.
   async getTodos() {
     try {
       await todosService.getTodos()
@@ -52,6 +51,17 @@ export class TodosController {
       // @ts-ignore
       form.reset
 
+    } catch (error) {
+      Pop.error(error)
+    }
+  }
+
+
+  // TODO: creating delete. Ok so I think I remember how they do this. They set the id of whatever todo it is, find that one, then do like a filter and set the filtered todo to a blank string or something like that?
+  async deleteTodo(todoId) {
+
+    try {
+      await todosService.deleteTodo(todoId)
     } catch (error) {
       Pop.error(error)
     }

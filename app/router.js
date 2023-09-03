@@ -37,7 +37,7 @@ export const router = [
       
         <div class="mb-3">
         
-         <div  id="todoList"></div>
+         <div id="todoList" class="container-fluid"></div>
         
 
         </div>

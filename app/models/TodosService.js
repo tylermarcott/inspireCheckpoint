@@ -38,11 +38,7 @@ class TodosService {
   async createTodo(formData) {
     console.log('passed form data:', formData)
 
-    // TODO: ok so I think what I can do to make this work is to add a createdTodos array in the appstate to save all of my todos in. I can do that here in my create. Then, I can copy the data from my form to a new instance of this class. I can then use that appstate array in order to post the to the sandbox my new todos that I create.
-
     AppState.activeTodo = new Todo(formData)
-
-    console.log('this is out active todo:', AppState.activeTodo);
 
     // NOTE: NOTE: so the difference between post and push: the reason we post is to send our data to the api. We then also have to push that same data, which will update it on our LOCAL SYSTEM. Post = to API, push = to LOCAL SYSTEM
 
@@ -55,13 +51,8 @@ class TodosService {
     AppState.emit('todosList')
 
     // NOTE: this data set is being pushed to the api, we can confirm this with the draw!
-
-
   }
 
-
-
-  // TODO: duhhhh, I never finished this function, so of COURSE I'm not getting the todos lol
 
   async getTodos() {
     let res = await api.get('api/todos')
@@ -72,6 +63,23 @@ class TodosService {
 
     AppState.todosList = mappedTodos
   }
+
+
+
+
+  deleteTodo(todoId) {
+
+    console.log('todo id in service:', todoId)
+
+    let foundTodo = AppState.todosList.find(id => id.id == todoId)
+
+    console.log('found id:', foundTodo)
+
+    AppState.todosList.filter(todo => )
+
+  }
+
+
 
 }
 

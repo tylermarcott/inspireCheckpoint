@@ -113,12 +113,22 @@
 
     <!-- we are just going to start with a template to draw the todos, then go back and do the checkboxes after we get a little more done. -->
 
+    <!-- TODO: have to replace the completed with a checkbox that corresponds to if it's completed or not. I'm thinking that it's a checkbox, checks to see if it's checked or not, and an onclick will be a function call to flip the boolean of the completed in the todos array -->
 
-    <!-- <div class="row" id="todoList">
-      <div>
-        completed?
+
+    <!-- <div class="row">
+
+      <div class="col-2">
+        <div checked='${this.completed}'></div>
       </div>
-      descrip:
+
+      <div class="col-6">
+        <div>${this.description}</div>
+      </div>
+
+      <div class="col-2">
+        <i class="mdi mdi-delete-circle" onclick="app.TodosController.deleteTodo(${this.id})"></i>
+      </div>
     </div> -->
 
 
