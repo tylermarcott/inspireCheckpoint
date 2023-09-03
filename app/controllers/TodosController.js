@@ -28,6 +28,8 @@ export class TodosController {
     AppState.on('todosList', _drawTodos)
   }
 
+
+  // FIXME: todos are not persisting through refresh. I can see the todos in the todo api, but they are not being loaded to the page.
   async getTodos() {
     try {
       await todosService.getTodos()
@@ -49,10 +51,6 @@ export class TodosController {
 
       // @ts-ignore
       form.reset
-
-      // @ts-ignore
-      // bootstrap.Collapse.getOrCreateInstance('#todoOffCanvas').hide()
-      //FIXME: this collapse no worky right
 
     } catch (error) {
       Pop.error(error)

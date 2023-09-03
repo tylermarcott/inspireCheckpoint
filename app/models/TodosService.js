@@ -61,17 +61,16 @@ class TodosService {
 
 
 
-
+  // TODO: duhhhh, I never finished this function, so of COURSE I'm not getting the todos lol
 
   async getTodos() {
     let res = await api.get('api/todos')
 
+    let mappedTodos = res.data.map(todo => new Todo(todo))
 
-    // NOTE: we are getting a 401 error UNAUTHORIZED. As you can see, we can go to the network tab and see the order of things that are happening. When we are trying to access something in the sandbox that needs credentials, we need to be able to complete our account auth first before running our TODOS:
-    // NOTE: also we can see since we haven't added any todos yet, we are going to get back an empty array. Once we start adding todos, we will be able to see this list populate. Once this happens, we will finish this guy up.
+    console.log('mapped todo list:', mappedTodos)
 
-    //TODO: finish this once you have your form and post done.
-
+    AppState.todosList = mappedTodos
   }
 
 }
