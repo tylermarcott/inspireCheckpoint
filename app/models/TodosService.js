@@ -96,6 +96,8 @@ class TodosService {
 
     AppState.emit('todoList')
 
+    console.log('emitting todoList after box checked')
+
   }
 
 

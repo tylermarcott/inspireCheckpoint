@@ -51,6 +51,7 @@ export class Todo {
 
 
   // FIXME: got count to work, but it's not updating on click. What can be called that will make this update/ is linked to this...?
+  // TODO: so I can see what's happening. Even though I click, todoCount() is only being called one time upon page reload
 
   static todoCount() {
     let uncompletedTodos = AppState.todosList.filter(todo => !todo.completed)
