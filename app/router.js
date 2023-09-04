@@ -56,14 +56,16 @@ export const router = [
 
     <section class="container-fluid clear-card">
 
+    <div class="text-light" id="clock"></div>
+
       <div class="col-3">
         <div class="card text-dark">
-          <div class="row">
+          <div class="row" onclick="app.WeatherController.switchTemperature()">
             <div class="col-6">
               <h3 id="city"></h3>
             </div>
             <div class="col-6">
-              <p id="temperature"></p>
+              <p id="temperature"></p> 
             </div>
           </div>
         </div>

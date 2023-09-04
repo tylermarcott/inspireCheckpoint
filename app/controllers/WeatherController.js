@@ -30,4 +30,25 @@ export class WeatherController {
       Pop.error(error)
     }
   }
+
+
+  switchTemperature() {
+    console.log('hello from weather controller!')
+  }
 }
+
+
+
+// NOTE: this function is able to the use the built in Date() method and pull the hours and minutes from them, then add them in an innerHTML in order to create a clock. The interval runs every second in order ot create an accurate reading.
+
+function getTime() {
+  let time = new Date()
+
+  let hours = time.getHours()
+  let minutes = time.getMinutes()
+
+  // @ts-ignore
+  document.getElementById('clock').innerHTML = (hours - 12) + ':' + minutes
+}
+
+setInterval(getTime, 1000)
