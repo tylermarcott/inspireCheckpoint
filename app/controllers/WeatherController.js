@@ -56,7 +56,7 @@ function getTime() {
   let hours = time.getHours()
   let minutes = time.getMinutes()
 
-  if (hours > 12) {
+  if (hours >= 12) {
     if (minutes < 10) {
       // @ts-ignore
       document.getElementById('clock').innerHTML = (hours - 12) + ':0' + minutes
@@ -64,13 +64,13 @@ function getTime() {
       // @ts-ignore
       document.getElementById('clock').innerHTML = (hours - 12) + ':' + minutes
     }
-  } else {
+  } else if (hours < 12) {
     if (minutes < 10) {
       // @ts-ignore
-      document.getElementById('clock').innerHTML = (12 - hours) + ':0' + minutes
+      document.getElementById('clock').innerHTML = (hours) + ':0' + minutes
     } else if (minutes >= 10) {
       // @ts-ignore
-      document.getElementById('clock').innerHTML = (12 - hours) + ':' + minutes
+      document.getElementById('clock').innerHTML = (hours) + ':' + minutes
     }
   }
 }
