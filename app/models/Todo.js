@@ -24,8 +24,8 @@ export class Todo {
         <div>${this.description}</div>
       </div>
 
-      <div class="col-2">
-        <i class="mdi mdi-delete-circle" onclick="app.TodosController.deleteTodo('${this.id}')"></i>
+      <div class="col-2 text-danger fs-5">
+        <i class="mdi mdi-delete" onclick="app.TodosController.deleteTodo('${this.id}')"></i>
       </div>
     </div>
   `

@@ -50,7 +50,7 @@ export class TodosController {
       await todosService.createTodo(formData)
 
       // @ts-ignore
-      form.reset
+      form.reset()
 
     } catch (error) {
       Pop.error(error)
