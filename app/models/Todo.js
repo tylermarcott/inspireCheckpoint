@@ -56,8 +56,6 @@ export class Todo {
   static todoCount() {
     let uncompletedTodos = AppState.todosList.filter(todo => !todo.completed)
 
-    console.log('you have this many uncompleted todos:', uncompletedTodos.length)
-
     // @ts-ignore
     return `<h5>Total todo count: ${uncompletedTodos.length}</h5>`
   }
