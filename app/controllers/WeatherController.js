@@ -37,8 +37,7 @@ export class WeatherController {
     }
   }
 
-  // TODO: soooo how am I going to do this? I need to be able to do an onclick that toggles between F and Celsius. Maybe use some sort of boolean value? Like onclick, if bool is true, calculate far from base temp value. If false, calculate celsius from base temperature value. Then change the value of the bool! I think this should work out just fine.
-  // TODO: orrrrr I could just use a toggle? lolol
+
   switchTemperature() {
     weatherService.switchTemperature()
   }
@@ -54,9 +53,23 @@ function getTime() {
   let hours = time.getHours()
   let minutes = time.getMinutes()
 
-
-  // @ts-ignore
-  document.getElementById('clock').innerHTML = (12 - hours) + ':' + minutes
+  if (hours > 12) {
+    if (minutes < 10) {
+      // @ts-ignore
+      document.getElementById('clock').innerHTML = (hours - 12) + ':0' + minutes
+    } else if (minutes >= 10) {
+      // @ts-ignore
+      document.getElementById('clock').innerHTML = (hours - 12) + ':' + minutes
+    }
+  } else {
+    if (minutes < 10) {
+      // @ts-ignore
+      document.getElementById('clock').innerHTML = (hours - 12) + ':0' + minutes
+    } else if (minutes >= 10) {
+      // @ts-ignore
+      document.getElementById('clock').innerHTML = (hours - 12) + ':' + minutes
+    }
+  }
 }
 
 setInterval(getTime, 1000)
