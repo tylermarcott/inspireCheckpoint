@@ -7,24 +7,17 @@ import { Todo } from "../models/Todo.js";
 
 
 function _drawTodos() {
-
   let content = ''
 
   let todos = AppState.todosList
 
   todos.forEach(todo => content += todo.todoTemplate)
 
-  setHTML('todoList', content)
-
-
-
-  // FIXME: having issues getting the todo count to update as the checkboxes for completeTodo function are clicked and unclicked.
-  // TODO: this is the last think that I have to complete. Curiously, on add and delete, the todo total count will update, but upon checking the box, the number does not update. I think I'm missing some sort of syntax that will allow me to redraw that number upon checking or unchecking of the boxes. Maybe run a couple of console logs so you can see if the draw function is running properly, at the time that you want it upon checking and unchecking the boxes.
-
-
   let uncompletedTodos = Todo.todoCount()
 
   setHTML('uncompleted-count', uncompletedTodos)
+
+  setHTML('todoList', content)
 }
 
 
@@ -86,8 +79,4 @@ export class TodosController {
       Pop.error(error)
     }
   }
-
-
-
-
 }

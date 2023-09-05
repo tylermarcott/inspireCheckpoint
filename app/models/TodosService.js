@@ -93,14 +93,8 @@ class TodosService {
 
     let res = await api.put(`api/todos/${todoId}`, foundTodo)
 
-    AppState.emit('todoList')
-
-    console.log('emitting todoList after box checked')
-
+    AppState.emit('todosList')
   }
-
-
-
 }
 
 
