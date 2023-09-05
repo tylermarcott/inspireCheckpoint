@@ -23,8 +23,14 @@ export const router = [
 
     <div class="offcanvas offcanvas-start clear-card text-light" tabindex="-1" id="todoOffCanvas" aria-labelledby="Todo">
       <div class="offcanvas-header">
+
+
         <div id="uncompleted-count"></div>
+
+
         <h5 class="offcanvas-title" id="offcanvasLabel">Add a new todo to your list:</h5>
+
+        
         <button class="text-light" type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
 
@@ -56,16 +62,16 @@ export const router = [
 
     <section class="container-fluid clear-card">
 
-    <div class="text-light" id="clock"></div>
+    <div class="text-light p-2 fs-5" id="clock"></div>
 
-      <div class="col-3">
+      <div class="col-3 p-2 clickable">
         <div class="card text-dark">
           <div class="row" onclick="app.WeatherController.switchTemperature()">
             <div class="col-6">
-              <h3 id="city"></h3>
+              <h3 class="p-1" id="city"></h3>
             </div>
             <div class="col-6">
-              <p id="temperature"></p> 
+              <p class="mt-2 fs-4" id="temperature"></p> 
             </div>
           </div>
         </div>
@@ -75,8 +81,10 @@ export const router = [
 
       </div>
 
-      <h2 class="text-light" id="quote"></h2>
-      <h4 class="text-light" id="author"></h4>
+      <div class="p-2 ms-3 clickable">
+        <h2 class="text-light" id="quote"></h2>
+        <h4 class="text-light ms-5" id="author"></h4>
+      </div>
 
       <button class="btn btn-success" data-bs-toggle="offcanvas" data-bs-target="#todoOffCanvas">Add a todo</button>
 

@@ -7,14 +7,17 @@ import { setHTML } from "../utils/Writer.js";
 
 function _drawWeather() {
   let weather = AppState.weather
+  // @ts-ignore
   let city = AppState.weather.name
   let weatherType = AppState.weatherTracker
 
   if (weatherType) {
+    // @ts-ignore
     let toFahrenheit = (weather.main.temp) * (9 / 5) - 459.67
     let fixedTemp = toFahrenheit.toFixed(0)
     setHTML('temperature', fixedTemp + ' F')
   } else if (!weatherType) {
+    // @ts-ignore
     let toCelsius = weather.main.temp - 273.15
     let fixedTemp = toCelsius.toFixed(0)
     setHTML('temperature', fixedTemp + ' C')
@@ -64,10 +67,10 @@ function getTime() {
   } else {
     if (minutes < 10) {
       // @ts-ignore
-      document.getElementById('clock').innerHTML = (hours - 12) + ':0' + minutes
+      document.getElementById('clock').innerHTML = (12 - hours) + ':0' + minutes
     } else if (minutes >= 10) {
       // @ts-ignore
-      document.getElementById('clock').innerHTML = (hours - 12) + ':' + minutes
+      document.getElementById('clock').innerHTML = (12 - hours) + ':' + minutes
     }
   }
 }

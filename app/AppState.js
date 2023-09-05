@@ -5,22 +5,17 @@ import { isValidProp } from './utils/IsValidProp.js'
 import { loadState } from './utils/Store.js'
 
 class ObservableAppState extends EventEmitter {
-
-
-
-
-
   /** @type {Image|null} */
   randomImage = null
 
 
-  /** @type {Quote|null} */
+  /** @type {null} */
   randomQuote = null
 
-  /** @type {Author|null} */
+  /** @type {null} */
   quoteAuthor = null
 
-  /** @type {Weather|null} */
+  /** @type {null} */
   weather = null
 
   /** @type {Todo} */

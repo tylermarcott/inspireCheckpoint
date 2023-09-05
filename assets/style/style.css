@@ -10,6 +10,14 @@ body {
   background-size: cover;
 }
 
+i {
+  cursor: pointer;
+}
+
+i:hover {
+  transform: scale(1.15);
+}
+
 .clear-card {
   background-color: #100c0cad;
   padding: 1em;
@@ -22,4 +30,8 @@ body {
 
 #quote:hover+#author {
   visibility: visible;
+}
+
+.clickable {
+  cursor: pointer;
 }

@@ -9,11 +9,13 @@ export class QuoteController {
 
 
   _drawQuote() {
+    // @ts-ignore
     setHTML('quote', AppState.randomQuote.content)
   }
 
   _drawAuthor() {
-    setHTML('author', AppState.quoteAuthor.author)
+    // @ts-ignore
+    setHTML('author', '-' + AppState.quoteAuthor.author)
   }
 
 
