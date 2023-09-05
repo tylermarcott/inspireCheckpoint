@@ -50,6 +50,8 @@ export class WeatherController {
 
 // NOTE: this function is able to the use the built in Date() method and pull the hours and minutes from them, then add them in an innerHTML in order to create a clock. The interval runs every second in order ot create an accurate reading.
 
+// NOTE: this is cool and all, but I could have just used toLocale syntax lollllll
+
 function getTime() {
   let time = new Date()
 

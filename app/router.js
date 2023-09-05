@@ -39,7 +39,7 @@ export const router = [
       <form class="offcanvas-body" onsubmit="app.TodosController.createTodo()">
         <div class="mb-3">
           <label for="description" class="form-label"></label>
-          <input name="description" type="text" class="description" id="description" placeholder="Add Todo">
+          <input class="rounded p-1" name="description" type="text" class="description" id="description" placeholder="Add Todo">
           <button type="submit" class="mdi mdi-plus-box"></button>
         </div>
       
