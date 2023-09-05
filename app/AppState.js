@@ -30,6 +30,7 @@ class ObservableAppState extends EventEmitter {
   /** @type {Todo[]} */
   todosList = []
 
+  weatherTracker = true
 
 
 

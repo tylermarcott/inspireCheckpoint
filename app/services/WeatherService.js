@@ -11,6 +11,16 @@ class WeatherService {
     AppState.weather = res.data
   }
 
+
+  switchTemperature() {
+
+    if (AppState.weatherTracker == true) {
+      AppState.weatherTracker = false
+    } else if (AppState.weatherTracker == false) {
+      AppState.weatherTracker = true
+    }
+    AppState.emit('weather')
+  }
 }
 
 

@@ -1,4 +1,5 @@
 import { AppState } from "../AppState.js";
+import { todosService } from "../models/TodosService.js";
 import { weatherService } from "../services/WeatherService.js";
 import { Pop } from "../utils/Pop.js";
 import { setHTML } from "../utils/Writer.js";
@@ -7,13 +8,18 @@ import { setHTML } from "../utils/Writer.js";
 function _drawWeather() {
   let weather = AppState.weather
   let city = AppState.weather.name
+  let weatherType = AppState.weatherTracker
 
-  let toFahrenheit = (weather.main.temp) * (9 / 5) - 459.67
-  let fixedTemp = toFahrenheit.toFixed(0)
-
+  if (weatherType) {
+    let toFahrenheit = (weather.main.temp) * (9 / 5) - 459.67
+    let fixedTemp = toFahrenheit.toFixed(0)
+    setHTML('temperature', fixedTemp + ' F')
+  } else if (!weatherType) {
+    let toCelsius = weather.main.temp - 273.15
+    let fixedTemp = toCelsius.toFixed(0)
+    setHTML('temperature', fixedTemp + ' C')
+  }
   setHTML('city', city)
-
-  setHTML('temperature', fixedTemp)
 }
 
 
@@ -31,9 +37,10 @@ export class WeatherController {
     }
   }
 
-
+  // TODO: soooo how am I going to do this? I need to be able to do an onclick that toggles between F and Celsius. Maybe use some sort of boolean value? Like onclick, if bool is true, calculate far from base temp value. If false, calculate celsius from base temperature value. Then change the value of the bool! I think this should work out just fine.
+  // TODO: orrrrr I could just use a toggle? lolol
   switchTemperature() {
-    console.log('hello from weather controller!')
+    weatherService.switchTemperature()
   }
 }
 
@@ -47,8 +54,9 @@ function getTime() {
   let hours = time.getHours()
   let minutes = time.getMinutes()
 
+
   // @ts-ignore
-  document.getElementById('clock').innerHTML = (hours - 12) + ':' + minutes
+  document.getElementById('clock').innerHTML = (12 - hours) + ':' + minutes
 }
 
 setInterval(getTime, 1000)
